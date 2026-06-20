@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>✦  Calculator · Premium</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <div class="loader-ring"></div>
+            <span>Loading Calculator</span>
+        </div>
+    </div>
+
+    <!-- Main Calculator App -->
+    <div class="app-container" id="app">
+        <!-- Calculator Card -->
+        <div class="calculator">
+            <!-- Header with Theme & History Buttons INSIDE -->
+            <div class="calc-header">
+                <div class="brand">
+                    <i class="fas fa-calculator"></i>
+                    <span>Calculator</span>
+                </div>
+                <div class="header-actions">
+                    <button class="history-btn" id="historyToggle" title="History">
+                        <i class="fas fa-clock-rotate-left"></i>
+                        <span class="history-badge" id="historyBadge">0</span>
+                    </button>
+                    <button class="theme-btn" id="themeToggle" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Display Screen -->
+            <div class="display-screen">
+                <div class="display-history" id="displayHistory"></div>
+                <div class="display-expression" id="displayExpression"></div>
+                <div class="display-result" id="displayResult">0</div>
+            </div>
+
+            <!-- Button Grid -->
+            <div class="button-grid">
+                <button class="btn btn-function" data-action="clear-all">AC</button>
+                <button class="btn btn-function" data-action="backspace">
+                    <i class="fas fa-delete-left"></i>
+                </button>
+                <button class="btn btn-function" data-action="percent">%</button>
+                <button class="btn btn-operator" data-action="divide">÷</button>
+
+                <button class="btn btn-number" data-action="7">7</button>
+                <button class="btn btn-number" data-action="8">8</button>
+                <button class="btn btn-number" data-action="9">9</button>
+                <button class="btn btn-operator" data-action="multiply">×</button>
+
+                <button class="btn btn-number" data-action="4">4</button>
+                <button class="btn btn-number" data-action="5">5</button>
+                <button class="btn btn-number" data-action="6">6</button>
+                <button class="btn btn-operator" data-action="subtract">−</button>
+
+                <button class="btn btn-number" data-action="1">1</button>
+                <button class="btn btn-number" data-action="2">2</button>
+                <button class="btn btn-number" data-action="3">3</button>
+                <button class="btn btn-operator" data-action="add">+</button>
+
+                <button class="btn btn-number zero" data-action="0">0</button>
+                <button class="btn btn-number" data-action="decimal">.</button>
+                <button class="btn btn-copy" data-action="copy">
+                    <i class="fas fa-copy"></i>
+                </button>
+                <button class="btn btn-equals" data-action="equals">=</button>
+            </div>
+
+            <!-- Sound Toggle -->
+            <div class="sound-toggle">
+                <button id="soundToggle" class="sound-btn" aria-label="Toggle sound">
+                    <i class="fas fa-volume-high"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- History Panel (sliding) -->
+        <div class="history-panel" id="historyPanel">
+            <div class="history-header">
+                <h3><i class="fas fa-clock-rotate-left"></i> History</h3>
+                <button id="clearHistory" class="clear-history-btn">
+                    <i class="fas fa-trash-can"></i> Clear All
+                </button>
+            </div>
+            <div class="history-list" id="historyList">
+                <div class="history-empty">
+                    <i class="fas fa-calculator"></i>
+                    <p>No calculations yet</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div class="toast" id="toast">
+            <i class="fas fa-check-circle"></i>
+            <span id="toastMessage">Copied!</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

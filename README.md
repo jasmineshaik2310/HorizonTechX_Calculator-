@@ -1,0 +1,1 @@
+Built a responsive calculator web application using HTML, CSS, and JavaScript with support for real-time arithmetic operations, keyboard interactions, and an intuitive UI to improve user experience and accessibility.
